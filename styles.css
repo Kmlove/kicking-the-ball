@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+#field{ 
+    margin: 0 auto;
+    width: 450px;
+    height: 600px;
+    background-image: url(./images/Soccer\ Field.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+}
+
+#ball{
+    border-radius: 50%;
+    width: 50px;
+    position: absolute;
+    top: 270px;
+    left: 190px;
+}
