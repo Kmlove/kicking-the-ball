@@ -4,13 +4,23 @@ ball.style.left = "190px";
 function moveLeft() {
     let left = ball.style.left.replace("px", "");
     let leftNumber = Number(left);
-    ball.style.left = `${leftNumber-1}px`;
+
+    if(left > 12){
+        ball.style.left = `${leftNumber-1}px`;
+    } else{
+        alert("You are about to go out of bounds! Move right!");
+    }
 };
 
 function moveRight() {
     let left = ball.style.left.replace("px", "");
     let leftNumber = Number(left);
-    ball.style.left = `${leftNumber+1}px`;
+
+    if(left < 371){
+        ball.style.left = `${leftNumber+1}px`;
+    } else{
+        alert("You are about to go out of bounds! Move left!");
+    }
 }
 
 document.addEventListener("keydown", function (event) {
