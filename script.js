@@ -1,4 +1,6 @@
 const ball = document.getElementById("ball");
+const resetBtn = document.getElementById("reset");
+
 ball.style.left = "190px";
 ball.style.top = "270px";
 
@@ -71,4 +73,9 @@ function moveBall(event) {
 }
 
 document.addEventListener("keydown", moveBall);
+
+resetBtn.addEventListener("click", function(){
+    ball.style.top = "270px";
+    ball.style.left = "190px";
+});
 
