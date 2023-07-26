@@ -40,17 +40,31 @@ h1{
 
 button{
     position: absolute;
-    top: 50%;
-    right: -120px;
     padding: 5px 10px;
     cursor: pointer;
-    background-color: green;
     font-weight: bold;
 }
 
-button:hover {
+#reset{
+    top: 52%;
+    right: -120px;
+    background-color: red;
+}
+
+#start{
+    top: 42%;
+    right: -120px;
+    background-color: green;
+}
+
+#reset:hover {
+    background-color: rgb(236, 154, 154);
+}
+
+#start:hover {
     background-color: lightgreen;
 }
+
 .bold{
     font-weight: bold;
 }

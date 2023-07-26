@@ -1,5 +1,6 @@
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
+const startBtn = document.getElementById("start");
 
 ball.style.left = "190px";
 ball.style.top = "270px";
@@ -72,10 +73,16 @@ function moveBall(event) {
     }
 }
 
-document.addEventListener("keydown", moveBall);
+function removeMoveBall() {
+    document.removeEventListener("keydown", moveBall);
+}
 
-resetBtn.addEventListener("click", function(){
-    ball.style.top = "270px";
-    ball.style.left = "190px";
+startBtn.addEventListener("click", function () {
+    document.addEventListener("keydown", moveBall);
 });
 
+resetBtn.addEventListener("click", function () {
+    ball.style.top = "270px";
+    ball.style.left = "190px";
+    removeMoveBall();
+});
