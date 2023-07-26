@@ -6,14 +6,28 @@ h1{
     text-align: center;
 }
 
+#containerDiv{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 10px;
+    margin-top: 50px;
+}
+
+#instructions{
+    grid-column: 2/6;
+    margin-left: 20px;
+}
+
 #field{ 
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    grid-column: 7/11;
     width: 430px;
     height: 585px;
     background-image: url(./images/Soccer\ Field.png);
     background-repeat: no-repeat;
     /*z-index: -1;*/
     position: relative;
+    
 }
 
 #ball{
@@ -36,4 +50,7 @@ button{
 
 button:hover {
     background-color: lightgreen;
+}
+.bold{
+    font-weight: bold;
 }
