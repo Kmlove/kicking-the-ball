@@ -1,9 +1,10 @@
 *{
     box-sizing: border-box;
+    font-size: 16px;
 }
 
-h1{
-    text-align: center;
+h2{
+    font-size: 1.5rem;
 }
 
 #containerDiv{
@@ -67,4 +68,28 @@ button{
 
 .bold{
     font-weight: bold;
+    font-size: 1.2rem;
+}
+#timerDiv{
+    position: absolute;
+    top: 25%;
+    right: -120px;
+    text-align: center;
+}
+
+#timerDiv > p {
+    margin: 0;
+}
+
+#timer{
+    border: 2px solid black;
+    height: 40px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer > p{
+    font-size: 1.1rem;
 }
