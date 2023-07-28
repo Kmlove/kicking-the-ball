@@ -117,9 +117,18 @@ function removeMoveBall() {
     document.removeEventListener("keydown", moveBall);
 }
 
+function preventKeyBoardScroll(e){
+    e.preventDefault();
+}
+
+function returnKeyBoardScroll(){
+    document.removeEventListener("keydown", preventKeyBoardScroll);
+}
+
 startBtn.addEventListener("click", function () {
     document.addEventListener("keydown", moveBall);
     timerCountdown();
+    document.addEventListener("keydown", preventKeyBoardScroll, false);
 });
 
 resetBtn.addEventListener("click", function () {
@@ -132,6 +141,7 @@ resetBtn.addEventListener("click", function () {
     removeMoveBall();
     stopTimer();
     clearInterval(changingBackground);
+    returnKeyBoardScroll();
 });
 
 
