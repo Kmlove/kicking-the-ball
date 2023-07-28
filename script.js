@@ -1,9 +1,14 @@
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
+let timerNum = document.getElementById("timer").querySelector('p');
+const timerDiv = document.getElementById("timer");
 
 ball.style.left = "190px";
 ball.style.top = "270px";
+
+let changingBackground;
+let timerInterval;
 
 function moveLeft() {
     let left = ball.style.left.replace("px", "");
@@ -73,16 +78,60 @@ function moveBall(event) {
     }
 }
 
+function timerCountdown (){
+
+    function countdown(){
+        if(num === 1){
+            timerNum.innerHTML = "Time's Up!"
+            timerNum.style.fontWeight = "bold";
+            stopTimer();
+            changingBackground = setInterval(timerBackground, 500);
+            removeMoveBall();
+        } else{
+            num --;
+            stringNum = String(num);
+            timerNum.innerHTML = stringNum;
+        }
+    }
+
+    let num = Number(timerNum.innerHTML);
+    timerInterval = setInterval(countdown, 1000);
+
+}
+
+function stopTimer (){
+    clearInterval(timerInterval);
+}
+
+function timerBackground(){
+    if (timerDiv.style.backgroundColor === "red"){
+        timerDiv.style.backgroundColor = "white";
+        timerNum.style.color = "black";
+    } else {
+        timerDiv.style.backgroundColor = "red";
+        timerNum.style.color = "white";
+    }
+}
+
 function removeMoveBall() {
     document.removeEventListener("keydown", moveBall);
 }
 
 startBtn.addEventListener("click", function () {
     document.addEventListener("keydown", moveBall);
+    timerCountdown();
 });
 
 resetBtn.addEventListener("click", function () {
     ball.style.top = "270px";
     ball.style.left = "190px";
+    timerNum.innerHTML = "60";
+    timerDiv.style.backgroundColor = "white";
+    timerNum.style.fontWeight = "normal";
+    timerNum.style.color = "black";
     removeMoveBall();
+    stopTimer();
+    clearInterval(changingBackground);
 });
+
+
