@@ -1,37 +1,36 @@
-*{
+* {
     box-sizing: border-box;
     font-size: 16px;
 }
 
-h2{
+h2 {
     font-size: 1.5rem;
 }
 
-#containerDiv{
+#containerDiv {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 10px;
     margin-top: 50px;
+    max-width: 1025px;
+    margin: 50px auto;
 }
 
-#instructions{
+#instructions {
     grid-column: 2/6;
     margin-left: 20px;
 }
 
-#field{ 
-    /*margin: 0 auto;*/
+#field {
     grid-column: 7/11;
     width: 430px;
     height: 585px;
     background-image: url(./images/Soccer\ Field.png);
     background-repeat: no-repeat;
-    /*z-index: -1;*/
     position: relative;
-    
 }
 
-#ball{
+#ball {
     border-radius: 50%;
     width: 50px;
     position: absolute;
@@ -39,20 +38,20 @@ h2{
     left: 190px;
 }
 
-button{
+button {
     position: absolute;
     padding: 5px 10px;
     cursor: pointer;
     font-weight: bold;
 }
 
-#reset{
+#reset {
     top: 52%;
     right: -120px;
     background-color: red;
 }
 
-#start{
+#start {
     top: 42%;
     right: -120px;
     background-color: green;
@@ -66,22 +65,23 @@ button{
     background-color: lightgreen;
 }
 
-.bold{
+.bold {
     font-weight: bold;
     font-size: 1.2rem;
 }
-#timerDiv{
+
+#timerDiv {
     position: absolute;
     top: 25%;
     right: -120px;
     text-align: center;
 }
 
-#timerDiv > p {
+#timerDiv>p {
     margin: 0;
 }
 
-#timer{
+#timer {
     border: 2px solid black;
     height: 45px;
     width: 80px;
@@ -90,6 +90,21 @@ button{
     justify-content: center;
 }
 
-#timer > p{
+#timer>p {
     font-size: 1.1rem;
+}
+
+@media screen and (max-width: 900px) {
+    #containerDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+        margin-top: 25px;
+    }
+
+    #field {
+        margin-top: 25px;
+    }
 }
